@@ -1,0 +1,331 @@
+
+/* 响应式布局,小屏优先 */
+.wrap {
+    overflow: hidden;
+    background-color: white;
+}
+/* 第一页 */
+.pageOne {
+    position: relative;
+    height: 100vh;
+    min-height: 466px;
+    background-color: #3092E8;
+    background-image: url(http://coding.imweb.io/img/project/resume/bg.png);
+    color:white;
+}
+.pageOne > div {
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+@keyframes img-loading{
+    to {
+        box-shadow: 0px 0px 0px white;
+    }
+    50% {
+        box-shadow: 0px 0px 20px white;
+    }
+    from {
+        box-shadow: 0px 0px 0px white;
+    }
+}
+.pageOne .img-wrap {
+    position: relative;
+    width: 100%;
+    height: 128px;
+}
+.pageOne img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    width: 110px;
+    height: 110px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    margin: 0px auto;
+    background-color: white;
+    border: 4px solid #6AB1EF;
+}
+.pageOne img:hover {
+    animation-name: img-loading;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3;
+    border: none;
+}
+.myName {
+    font-size: 30px;
+    text-align: center;
+    line-height: 200%;
+}
+.keyword {
+    text-align: center;
+}
+.contact {
+    margin:30px auto;
+    width: 280px;
+}
+.contact p {
+    text-align: left;
+    line-height: 200%;
+    font-style: initial;
+    font-weight: bold;
+}
+.contact p::before {
+    font-size: 26px;
+    padding-right: 10px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.person-detail {
+    width: 300px;
+    margin: 30px auto 0px auto;
+    border: 1px solid #2374BF;
+    border-radius: 5px;
+    color: #E0E6EC;
+    font-size: 12px;
+    overflow: hidden;
+}
+.person-detail p{
+    line-height: 200%;
+    padding-left: 6px;
+}
+.left{
+    width: 50%;
+    float: left;
+}
+.right{
+    width: 50%;
+    float: right;
+}
+/* 次页面 */
+.pageTwo {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+.pageTwo > div{
+    width: 92%;
+
+}
+section h1 {
+    font-size: 0px;
+    color:  #6AB1EF;
+    display: flex;
+    align-items: center;
+}
+section h1 span {
+    font-size: 20px;
+    padding: 0px 10px;
+    vertical-align: middle;
+    line-height: 260%;
+}
+section h1::before {
+    content: "";
+    display: block;
+    height: 1px;
+    flex-grow: 1;
+    transform: scaleY(0.5);
+    background-color: #C9CAC9;
+}
+section h1::after {
+    content: "";
+    display: block;
+    height: 1px;
+    flex-grow: 1;
+    transform: scaleY(0.5);
+    background-color: #C9CAC9;
+}
+.experience ul{
+    position: relative;
+    margin: 20px 0px;
+    z-index: 0;
+}
+.experience ul::before{
+    content: "";
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    left: 0px;
+    top: 12px;
+    background-image: linear-gradient(180deg,#C9CAC9, #C9CAC9 75%,transparent);
+    transform: scaleX(0.5);
+}
+.experience li{
+    padding-left: 16px;
+    position: relative;
+}
+/* 小蓝点 */
+.experience li::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #3193EA;
+    border: 3px solid #CBE0F2;
+    position: absolute;
+    left: -8px;
+    top: 2px;
+}
+/* 小蓝点的动画 */
+@keyframes tip-loading {
+    to {
+        box-shadow: 0px 0px 0px #3193EA;
+    }
+    50% {
+        box-shadow: 0px 0px 8px #3193EA;
+    }
+    from {
+        box-shadow: 0px 0px 0px #3193EA;
+    }
+}
+.experience li:hover::after{
+    animation-name: tip-loading;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    border: 3px solid translation;
+}
+.experience h2{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    line-height: 150%;
+}
+.experience p {
+    font-size: 10px;
+    color: #999A99;
+    margin: 10px 0px;
+}
+.skill {
+    margin: 0px auto;
+    width: 92;
+}
+.skill ul {
+    position: relative;
+    margin: 20px 0px;
+}
+.skill ul li {
+    position: relative;
+    margin-bottom: 20px;
+}
+.skill li > div:nth-child(1) {
+    margin: 5px 0px;
+}
+.skill h2{
+    color: black;
+    font-size: 16px;
+    line-height: 180%;
+}
+.skill h3 {
+    color: #989998;
+    font-size: 12px;
+}
+.skill li span {
+    display: block;
+    width: 40px;
+    height: 18px;
+    border: 1px solid #CFD0CF;
+    border-radius: 8px;
+    font-size: 10px;
+    text-align: center;
+    color: rgb(165, 165, 165);
+    line-height: 18px;
+    position: absolute;
+    right: 2px;
+    top: 12px;
+}
+.skill .bar {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #CBCCCB;
+    margin: 10px 0;
+    overflow: hidden;
+}
+.skill  .bar-tip {
+    height: 100%;
+    background-image: linear-gradient( 90deg, #267FD0,#267FD0 60%,#43B0E9);
+    transition: width 250ms ease-in-out;
+}
+.item:nth-child(1) .bar-tip{
+    width: 20%;
+}
+.item:nth-child(2) .bar-tip{
+    width: 80%;
+}
+.item:nth-child(3) .bar-tip{
+    width: 50%;
+}
+/* 进度条动画 */
+@keyframes re-loading1 {
+    to {
+        width: 20%;
+    }
+    50% {
+        width: 5%;
+    }
+    from {
+        width: 20%;
+    }
+}
+@keyframes re-loading2 {
+    to {
+        width: 80%;
+    }
+    50% {
+        width: 5%;
+    }
+    from {
+        width: 80%;
+    }
+}
+@keyframes re-loading3 {
+    to {
+        width: 50%;
+    }
+    50% {
+        width: 5%;
+    }
+    from {
+        width: 50%;
+    }
+}
+.item:nth-child(1):hover .bar-tip {
+    animation-name: re-loading1;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+.item:nth-child(2):hover .bar-tip {
+    animation-name: re-loading2;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+.item:nth-child(3):hover .bar-tip {
+    animation-name: re-loading3;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+/* 最小值大于768px的时候 */
+@media ( min-width: 768px ){
+    .wrap {
+        display: flex;
+    }
+    .pageOne {
+        flex:1;
+    }
+    .pageTwo {
+        flex:1;
+    }
+
+}
